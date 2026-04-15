@@ -1,0 +1,1856 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BUSHIMESHI × 来宮神社 × 伊豆山神社 — Sacred Atami Collab | Marufuji</title>
+  <meta name="description" content="An exclusive influencer invitation: BUSHIMESHI dashi experience combined with Kinomiya Shrine's 2,100-year-old sacred camphor tree, Izusan Shrine's love power spot, and the wild landscapes of Izu, Shizuoka." />
+  <meta property="og:title" content="BUSHIMESHI × Sacred Atami — Shrine Collab Influencer Invitation" />
+  <meta property="og:description" content="Taste the soul of Japan. Hand-shaved bonito flakes, dashi crafted to 0.015mm precision, in the heart of Izu." />
+  <meta property="og:image" content="https://bushimeshi.com/wp/wp-content/themes/bushimeshi_wp/ogp.jpg" />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Design Tokens ── */
+    :root {
+      --bushi-base: images/;
+
+      --color-bg: #0b0906;
+      --color-surface: #13100b;
+      --color-surface-2: #1a1610;
+      --color-surface-offset: #221d15;
+      --color-border: #2c2619;
+      --color-divider: #3a3225;
+      --color-text: #ede8dc;
+      --color-text-muted: #9a9080;
+      --color-text-faint: #54503e;
+      --color-primary: #c8a84b;
+      --color-primary-hover: #e0c06a;
+      --color-primary-glow: rgba(200,168,75,0.15);
+
+      --font-display: 'Cormorant Garamond', 'Georgia', serif;
+      --font-body: 'Switzer', 'DM Sans', 'Helvetica Neue', sans-serif;
+
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --text-hero: clamp(3.5rem, 1rem + 6.5vw, 7rem);
+
+      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem;
+      --space-4: 1rem; --space-5: 1.25rem; --space-6: 1.5rem;
+      --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem;
+      --space-16: 4rem; --space-20: 5rem; --space-24: 6rem; --space-32: 8rem;
+
+      --radius-sm: 0.25rem; --radius-md: 0.5rem;
+      --radius-lg: 0.875rem; --radius-full: 9999px;
+
+      --shadow-lg: 0 16px 56px rgba(0,0,0,0.65);
+      --transition: 220ms cubic-bezier(0.16, 1, 0.3, 1);
+
+      --content-narrow: 680px;
+      --content-default: 960px;
+      --content-wide: 1200px;
+    }
+
+    /* ── Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--space-16);
+    }
+    body {
+      min-height: 100dvh;
+      line-height: 1.65;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      overflow-x: hidden;
+    }
+    img, picture { display: block; max-width: 100%; height: auto; }
+    ul[role="list"], ol[role="list"] { list-style: none; }
+    h1,h2,h3,h4,h5,h6 { text-wrap: balance; line-height: 1.15; font-family: var(--font-display); }
+    p, li { text-wrap: pretty; max-width: 72ch; }
+    button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
+    a { color: inherit; text-decoration: none; }
+    ::selection { background: rgba(200,168,75,0.22); color: var(--color-text); }
+    :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; border-radius: var(--radius-sm); }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+
+    /* ── Layout ── */
+    .container {
+      width: 100%;
+      max-width: var(--content-wide);
+      margin-inline: auto;
+      padding-inline: clamp(var(--space-6), 5vw, var(--space-16));
+    }
+    .section { padding-block: clamp(var(--space-16), 9vw, var(--space-32)); }
+
+    /* ── NAV ── */
+    .nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-4) clamp(var(--space-6), 5vw, var(--space-16));
+      background: linear-gradient(to bottom, rgba(11,9,6,0.88) 0%, transparent 100%);
+      transition: backdrop-filter var(--transition), background var(--transition);
+    }
+    .nav--scrolled { background: rgba(11,9,6,0.94); backdrop-filter: blur(14px); }
+    .nav__logo {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+    }
+    .nav__logo img {
+      height: 32px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      opacity: 0.9;
+    }
+    .nav__links { display: flex; gap: var(--space-8); list-style: none; }
+    .nav__links a {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color var(--transition);
+    }
+    .nav__links a:hover { color: var(--color-primary); }
+    .nav__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-2) var(--space-5);
+      border: 1px solid var(--color-primary);
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      color: var(--color-primary);
+      letter-spacing: 0.05em;
+      transition: background var(--transition), color var(--transition);
+    }
+    .nav__cta:hover { background: var(--color-primary); color: var(--color-bg); }
+    @media (max-width: 768px) {
+      .nav__links, .nav__cta { display: none; }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100dvh;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/kv-open.webp');
+      background-size: cover;
+      background-position: center 35%;
+    }
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(11,9,6,0.55) 0%,
+        rgba(11,9,6,0.45) 35%,
+        rgba(11,9,6,0.85) 100%
+      );
+    }
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: var(--space-20) var(--space-6) var(--space-16);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-6);
+    }
+    .hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-size: var(--text-xs);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      opacity: 0;
+      animation: fadeUp 0.8s 0.2s ease both;
+    }
+    .hero__eyebrow::before, .hero__eyebrow::after {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 1px;
+      background: var(--color-primary);
+      opacity: 0.6;
+    }
+    .hero__logo {
+      opacity: 0;
+      animation: fadeUp 0.9s 0.4s ease both;
+    }
+    .hero__logo img {
+      height: clamp(48px, 8vw, 80px);
+      width: auto;
+      filter: brightness(0) invert(1);
+      margin-inline: auto;
+      display: block;
+    }
+    .hero__tagline {
+      font-family: var(--font-display);
+      font-size: var(--text-hero);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--color-text);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.6s ease both;
+    }
+    .hero__sub {
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      max-width: 50ch;
+      line-height: 1.75;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.8s ease both;
+    }
+    .hero__actions {
+      display: flex;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+      justify-content: center;
+      opacity: 0;
+      animation: fadeUp 0.9s 1s ease both;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-3) var(--space-8);
+      background: var(--color-primary);
+      color: #0b0906;
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+    }
+    .btn-primary:hover { background: var(--color-primary-hover); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(200,168,75,0.3); }
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-3) var(--space-8);
+      border: 1px solid var(--color-divider);
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      letter-spacing: 0.05em;
+      transition: border-color var(--transition), color var(--transition);
+    }
+    .btn-ghost:hover { border-color: var(--color-text-muted); color: var(--color-text); }
+    .hero__scroll {
+      position: absolute;
+      bottom: var(--space-8);
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-2);
+      opacity: 0;
+      animation: fadeIn 1s 1.6s ease both;
+    }
+    .hero__scroll span { font-size: var(--text-xs); letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-text-faint); }
+    .scroll-line { width: 1px; height: 38px; background: linear-gradient(to bottom, var(--color-primary), transparent); animation: scrollPulse 2.2s ease-in-out infinite; }
+
+    /* ── STATS STRIP ── */
+    .stats-strip {
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+      padding-block: var(--space-10);
+    }
+    .stats-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(var(--space-8), 5vw, var(--space-20));
+      flex-wrap: wrap;
+    }
+    .stat { text-align: center; }
+    .stat .num {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      color: var(--color-primary);
+      font-weight: 600;
+      display: block;
+      line-height: 1;
+    }
+    .stat .label {
+      font-size: var(--text-xs);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-top: var(--space-1);
+    }
+    .stat-divider { width: 1px; height: 44px; background: var(--color-border); }
+    @media (max-width: 560px) { .stat-divider { display: none; } }
+
+    /* ── SECTION TYPOGRAPHY ── */
+    .section-label {
+      font-size: var(--text-xs);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: var(--space-4);
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+    }
+    .section-label::before { content: ''; width: 24px; height: 1px; background: var(--color-primary); }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      font-weight: 400;
+      color: var(--color-text);
+      margin-bottom: var(--space-6);
+      line-height: 1.2;
+    }
+    .section-body {
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      line-height: 1.85;
+      margin-bottom: var(--space-5);
+    }
+
+    /* ── TWO COL ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(var(--space-10), 6vw, var(--space-20));
+      align-items: center;
+    }
+    .two-col--rev { direction: rtl; }
+    .two-col--rev > * { direction: ltr; }
+    @media (max-width: 768px) {
+      .two-col, .two-col--rev { grid-template-columns: 1fr; direction: ltr; }
+    }
+
+    /* ── IMAGE FRAMES ── */
+    .img-frame {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .img-frame--43 { aspect-ratio: 4/3; }
+    .img-frame--169 { aspect-ratio: 16/9; }
+    .img-frame img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+    .img-frame:hover img { transform: scale(1.04); }
+    .img-badge {
+      position: absolute;
+      bottom: var(--space-4);
+      left: var(--space-4);
+      background: rgba(11,9,6,0.82);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: var(--space-2) var(--space-4);
+      font-size: var(--text-xs);
+      letter-spacing: 0.1em;
+      color: var(--color-primary);
+      text-transform: uppercase;
+    }
+
+    /* ── FULL BLEED ── */
+    .fullbleed {
+      width: 100%;
+      height: clamp(180px, 28vw, 340px);
+      overflow: hidden;
+      position: relative;
+    }
+    .fullbleed img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+    .fullbleed__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(11,9,6,0.65) 0%, transparent 35%, transparent 65%, rgba(11,9,6,0.65) 100%);
+    }
+    .fullbleed__caption {
+      position: absolute;
+      bottom: var(--space-5);
+      left: clamp(var(--space-6), 5vw, var(--space-16));
+      font-size: var(--text-xs);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(237,232,220,0.6);
+    }
+
+    /* ── MENU GRID (FOOD PHOTOS) ── */
+    .menu-section { background: var(--color-surface); border-top: 1px solid var(--color-border); }
+    .menu-header { text-align: center; max-width: var(--content-narrow); margin-inline: auto; margin-bottom: var(--space-12); }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+    }
+    @media (max-width: 860px) { .menu-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 520px) { .menu-grid { grid-template-columns: 1fr; } }
+    .menu-card {
+      background: var(--color-surface-2, #1a1610);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+    .menu-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--color-divider); }
+    .menu-card__img { aspect-ratio: 4/3; overflow: hidden; }
+    .menu-card__img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .menu-card:hover .menu-card__img img { transform: scale(1.06); }
+    .menu-card__body { padding: var(--space-5); }
+    .menu-card__tag { font-size: var(--text-xs); letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-primary); margin-bottom: var(--space-2); }
+    .menu-card__name { font-family: var(--font-display); font-size: var(--text-lg); font-weight: 600; color: var(--color-text); margin-bottom: var(--space-2); }
+    .menu-card__desc { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.7; margin-bottom: var(--space-3); }
+    .menu-card__price { font-family: var(--font-display); font-size: var(--text-lg); color: var(--color-primary); font-weight: 400; }
+
+    /* ── TAKE-HOME PRODUCTS ── */
+    .product-section { background: var(--color-bg); }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-5);
+      margin-top: var(--space-12);
+    }
+    @media (max-width: 900px) { .product-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 500px) { .product-grid { grid-template-columns: 1fr; } }
+    .product-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      text-align: center;
+      transition: transform var(--transition), border-color var(--transition);
+    }
+    .product-card:hover { transform: translateY(-3px); border-color: var(--color-primary); }
+    .product-card__img { height: 140px; display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4); }
+    .product-card__img img { max-height: 100%; width: auto; object-fit: contain; }
+    .product-card__spec { font-size: var(--text-xs); letter-spacing: 0.12em; color: var(--color-primary); text-transform: uppercase; margin-bottom: var(--space-2); }
+    .product-card__name { font-family: var(--font-display); font-size: var(--text-lg); font-weight: 600; color: var(--color-text); margin-bottom: var(--space-2); }
+    .product-card__desc { font-size: var(--text-xs); color: var(--color-text-muted); line-height: 1.7; margin-bottom: var(--space-3); }
+    .product-card__price { font-family: var(--font-display); font-size: var(--text-xl); color: var(--color-primary); }
+
+    /* ── SACRED LAND ── */
+    .sacred-hero {
+      position: relative;
+      height: 100dvh;
+      min-height: 600px;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+    }
+    .sacred-hero__bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/sacred_izu_main.webp');
+      background-size: cover;
+      background-position: center 40%;
+      transform: scale(1.04);
+      transition: transform 0.1s linear;
+    }
+    .sacred-hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(11,9,6,0.15) 0%,
+        rgba(11,9,6,0.55) 45%,
+        rgba(11,9,6,0.95) 100%
+      );
+    }
+    .sacred-hero__content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: var(--space-8) var(--space-6);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-5);
+    }
+    .sacred-kana {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 3vw, 1.5rem);
+      letter-spacing: 0.5em;
+      color: var(--color-primary);
+      opacity: 0.85;
+      font-weight: 300;
+    }
+    .sacred-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 1rem + 5vw, 5.5rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--color-text);
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      max-width: 14ch;
+      margin-inline: auto;
+    }
+    .sacred-title strong {
+      display: block;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 0.52em;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: var(--space-2);
+    }
+    .sacred-sub {
+      font-size: var(--text-base);
+      color: rgba(237,232,220,0.75);
+      max-width: 52ch;
+      line-height: 1.8;
+    }
+    .sacred-divider {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      color: var(--color-primary);
+      opacity: 0.5;
+    }
+    .sacred-divider::before, .sacred-divider::after {
+      content: '';
+      display: block;
+      width: 48px;
+      height: 1px;
+      background: var(--color-primary);
+    }
+    .sacred-divider span { font-size: var(--text-xs); letter-spacing: 0.2em; text-transform: uppercase; }
+    /* Pillars grid */
+    .sacred-section { background: var(--color-bg); }
+    .sacred-pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-1);
+      margin-top: var(--space-12);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    @media (max-width: 768px) { .sacred-pillars { grid-template-columns: 1fr; } }
+    .sacred-pillar {
+      position: relative;
+      overflow: hidden;
+      cursor: default;
+    }
+    .sacred-pillar__img {
+      aspect-ratio: 3/4;
+      overflow: hidden;
+    }
+    @media (max-width: 768px) { .sacred-pillar__img { aspect-ratio: 16/9; } }
+    .sacred-pillar__img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: brightness(0.7) saturate(0.85);
+      transition: filter 0.6s ease, transform 0.6s ease;
+    }
+    .sacred-pillar:hover .sacred-pillar__img img {
+      filter: brightness(0.9) saturate(1.1);
+      transform: scale(1.05);
+    }
+    .sacred-pillar__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(11,9,6,0.92) 0%, rgba(11,9,6,0.2) 55%, transparent 100%);
+      pointer-events: none;
+    }
+    .sacred-pillar__body {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: var(--space-6);
+      z-index: 2;
+    }
+    .sacred-pillar__num {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      color: var(--color-primary);
+      opacity: 0.35;
+      line-height: 1;
+      display: block;
+      margin-bottom: var(--space-1);
+    }
+    .sacred-pillar__label {
+      font-size: var(--text-xs);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: var(--space-2);
+      display: block;
+    }
+    .sacred-pillar__title {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: 400;
+      color: var(--color-text);
+      margin-bottom: var(--space-3);
+      line-height: 1.2;
+    }
+    .sacred-pillar__desc {
+      font-size: var(--text-sm);
+      color: rgba(237,232,220,0.65);
+      line-height: 1.75;
+    }
+    /* Manifesto */
+    .sacred-manifesto {
+      margin-top: var(--space-20);
+      text-align: center;
+      max-width: 760px;
+      margin-inline: auto;
+      padding: var(--space-16) var(--space-6);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+      position: relative;
+    }
+    .sacred-manifesto::before, .sacred-manifesto::after {
+      content: '『';
+      font-family: var(--font-display);
+      font-size: 6rem;
+      color: var(--color-primary);
+      opacity: 0.08;
+      position: absolute;
+      line-height: 1;
+    }
+    .sacred-manifesto::before { top: var(--space-6); left: var(--space-6); }
+    .sacred-manifesto::after { content: '』'; bottom: var(--space-6); right: var(--space-6); }
+    .sacred-manifesto__jp {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      font-weight: 300;
+      color: var(--color-text);
+      letter-spacing: 0.12em;
+      line-height: 1.8;
+      margin-bottom: var(--space-6);
+    }
+    .sacred-manifesto__en {
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      line-height: 1.9;
+      font-style: italic;
+      font-family: var(--font-display);
+      font-weight: 300;
+    }
+    /* Sea fullbleed */
+    .sacred-sea {
+      width: 100%;
+      height: clamp(260px, 40vw, 520px);
+      overflow: hidden;
+      position: relative;
+      margin-top: var(--space-16);
+      border-radius: var(--radius-lg);
+    }
+    .sacred-sea img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+    }
+    .sacred-sea__overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(11,9,6,0.5) 0%,
+        transparent 30%,
+        transparent 70%,
+        rgba(11,9,6,0.8) 100%
+      );
+    }
+    .sacred-sea__caption {
+      position: absolute;
+      bottom: var(--space-8); left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      white-space: nowrap;
+    }
+    .sacred-sea__caption .jp {
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 2.5vw, 2rem);
+      color: var(--color-text);
+      letter-spacing: 0.18em;
+      display: block;
+      margin-bottom: var(--space-1);
+    }
+    .sacred-sea__caption .en {
+      font-size: var(--text-xs);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+    }
+
+    /* ── SHRINE COLLAB ── */
+    .shrine-section { background: var(--color-bg); }
+    .shrine-header { text-align: center; max-width: var(--content-narrow); margin-inline: auto; margin-bottom: var(--space-16); }
+    .shrine-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-6);
+      margin-bottom: var(--space-16);
+    }
+    @media (max-width: 768px) { .shrine-grid { grid-template-columns: 1fr; } }
+    .shrine-card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      transition: border-color var(--transition), transform var(--transition);
+    }
+    .shrine-card:hover { border-color: var(--color-primary); transform: translateY(-3px); }
+    .shrine-card__img { aspect-ratio: 4/3; overflow: hidden; }
+    .shrine-card__img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+    .shrine-card:hover .shrine-card__img img { transform: scale(1.05); }
+    .shrine-card__body { padding: var(--space-6); background: var(--color-surface); }
+    .shrine-card__en { font-size: var(--text-xs); letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-primary); margin-bottom: var(--space-2); }
+    .shrine-card__name { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 400; color: var(--color-text); margin-bottom: var(--space-1); }
+    .shrine-card__jp { font-size: var(--text-sm); color: var(--color-text-faint); margin-bottom: var(--space-4); letter-spacing: 0.1em; }
+    .shrine-card__desc { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.8; margin-bottom: var(--space-4); }
+    .shrine-tag-list { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+    .shrine-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+      background: var(--color-primary-glow);
+      border: 1px solid rgba(200,168,75,0.2);
+      border-radius: var(--radius-full);
+      padding: 3px var(--space-3);
+      font-size: var(--text-xs);
+      color: var(--color-primary);
+      letter-spacing: 0.08em;
+    }
+    .collab-product {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      align-items: stretch;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    @media (max-width: 768px) { .collab-product { grid-template-columns: 1fr; } }
+    .collab-product__img { overflow: hidden; }
+    .collab-product__img img { width: 100%; height: 100%; object-fit: cover; min-height: 320px; transition: transform 0.6s ease; }
+    .collab-product:hover .collab-product__img img { transform: scale(1.04); }
+    .collab-product__body { padding: clamp(var(--space-6), 4vw, var(--space-12)); display: flex; flex-direction: column; justify-content: center; }
+    .collab-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: var(--color-primary-glow);
+      border: 1px solid rgba(200,168,75,0.25);
+      border-radius: var(--radius-full);
+      padding: var(--space-1) var(--space-4);
+      font-size: var(--text-xs);
+      letter-spacing: 0.14em;
+      color: var(--color-primary);
+      text-transform: uppercase;
+      margin-bottom: var(--space-4);
+      width: fit-content;
+    }
+    .collab-product__title { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 400; color: var(--color-text); margin-bottom: var(--space-4); line-height: 1.2; }
+    .collab-product__desc { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.85; margin-bottom: var(--space-5); }
+    .collab-shrines { display: flex; gap: var(--space-3); flex-wrap: wrap; margin-bottom: var(--space-6); }
+    .collab-shrine-chip {
+      font-size: var(--text-xs);
+      letter-spacing: 0.1em;
+      color: var(--color-text-muted);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-full);
+      padding: var(--space-1) var(--space-3);
+    }
+
+    /* ── SHOP MOSAIC ── */
+    .shop-section { background: var(--color-surface); border-top: 1px solid var(--color-border); }
+    .shop-mosaic {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 200px 200px;
+      gap: var(--space-3);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-top: var(--space-10);
+    }
+    .shop-mosaic .tile { overflow: hidden; }
+    .shop-mosaic .tile img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .shop-mosaic .tile:hover img { transform: scale(1.06); }
+    .shop-mosaic .tile--large { grid-row: span 2; }
+    @media (max-width: 700px) {
+      .shop-mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .shop-mosaic .tile--large { grid-row: span 1; }
+    }
+
+    /* ── IZU TOUR TIMELINE ── */
+    .tour-section { background: var(--color-bg); }
+    .tour-header { text-align: center; max-width: var(--content-narrow); margin-inline: auto; margin-bottom: var(--space-16); }
+    .tour-timeline { position: relative; max-width: 780px; margin-inline: auto; }
+    .tour-timeline::before {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      left: 31px;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, var(--color-primary) 8%, var(--color-primary) 92%, transparent);
+      opacity: 0.3;
+    }
+    .tour-step { display: grid; grid-template-columns: 64px 1fr; gap: var(--space-6); margin-bottom: var(--space-10); align-items: start; }
+    .tour-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+    .tour-content { padding-top: var(--space-3); }
+    .tour-time { font-size: var(--text-xs); letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-primary); margin-bottom: var(--space-2); }
+    .tour-title { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 400; color: var(--color-text); margin-bottom: var(--space-3); }
+    .tour-desc { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.8; }
+    .tour-photo { margin-top: var(--space-5); border-radius: 12px; overflow: hidden; position: relative; }
+    .tour-photo img { width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover; transition: transform 0.6s ease; }
+    .tour-photo:hover img { transform: scale(1.03); }
+    .tour-photo__caption { position: absolute; bottom: 0; left: 0; right: 0; padding: var(--space-3) var(--space-4); background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 100%); font-size: var(--text-xs); color: rgba(255,255,255,0.75); letter-spacing: 0.08em; }
+
+    /* ── INVITE & FORM ── */
+    .invite-section { background: var(--color-surface); border-top: 1px solid var(--color-border); }
+    .invite-inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(var(--space-10), 6vw, var(--space-20)); align-items: start; }
+    @media (max-width: 768px) { .invite-inner { grid-template-columns: 1fr; } }
+    .perks { list-style: none; display: flex; flex-direction: column; gap: var(--space-4); margin-block: var(--space-8); }
+    .perk { display: flex; align-items: flex-start; gap: var(--space-4); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.65; }
+    .perk-dot {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--color-primary-glow);
+      border: 1px solid rgba(200,168,75,0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .perk-dot svg { color: var(--color-primary); }
+    .perk strong { display: block; color: var(--color-text); margin-bottom: 2px; }
+    .contact-card {
+      background: var(--color-surface-offset, #221d15);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-8);
+    }
+    .contact-card h3 { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 400; color: var(--color-text); margin-bottom: var(--space-2); }
+    .contact-card .sub { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-6); line-height: 1.65; }
+    .form { display: flex; flex-direction: column; gap: var(--space-4); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+    @media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+    .form-group { display: flex; flex-direction: column; gap: var(--space-2); }
+    .form-group label { font-size: var(--text-xs); letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-text-muted); }
+    .form-group input, .form-group textarea, .form-group select {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: var(--space-3) var(--space-4);
+      font-size: var(--text-sm);
+      color: var(--color-text);
+      width: 100%;
+      font-family: var(--font-body);
+      transition: border-color var(--transition);
+    }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: var(--color-text-faint); }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--color-primary); }
+    .form-group textarea { min-height: 96px; resize: vertical; }
+    .form-group select { appearance: none; cursor: pointer; }
+    .form-submit {
+      width: 100%;
+      padding: var(--space-3) var(--space-6);
+      background: var(--color-primary);
+      color: #0b0906;
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      transition: background var(--transition), transform var(--transition);
+      margin-top: var(--space-2);
+    }
+    .form-submit:hover { background: var(--color-primary-hover); transform: translateY(-1px); }
+    #formMsg { display:none; font-size:var(--text-sm); color:var(--color-primary); margin-top:var(--space-4); text-align:center; line-height:1.6; }
+
+    /* ── HASHTAG STRIP ── */
+    .hashtag-strip {
+      background: var(--color-primary-glow);
+      border-top: 1px solid rgba(200,168,75,0.18);
+      border-bottom: 1px solid rgba(200,168,75,0.18);
+      padding-block: var(--space-5);
+      text-align: center;
+      overflow: hidden;
+    }
+    .hashtag-list { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-4) var(--space-6); }
+    .hashtag-list span {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-weight: 600;
+      color: var(--color-primary);
+      opacity: 0.65;
+      transition: opacity var(--transition);
+    }
+    .hashtag-list span:hover { opacity: 1; }
+
+    /* ── ABOUT MARUFUJI ── */
+    .about-section { background: var(--color-bg); text-align: center; }
+    .about-logo { margin-inline: auto; margin-bottom: var(--space-8); height: 60px; width: auto; filter: brightness(0) invert(1); opacity: 0.7; }
+    .about-quote {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--color-text);
+      max-width: 620px;
+      margin-inline: auto;
+      line-height: 1.5;
+      margin-bottom: var(--space-8);
+    }
+    .about-body { font-size: var(--text-base); color: var(--color-text-muted); max-width: 54ch; margin-inline: auto; line-height: 1.85; }
+
+    /* ── FOOTER ── */
+    .footer { background: var(--color-surface); border-top: 1px solid var(--color-border); padding-block: var(--space-12); }
+    .footer-inner { display: flex; flex-wrap: wrap; gap: var(--space-8); justify-content: space-between; align-items: flex-start; }
+    .footer-brand img { height: 28px; width: auto; filter: brightness(0) invert(1); opacity: 0.65; margin-bottom: var(--space-3); }
+    .footer-brand p { font-size: var(--text-xs); color: var(--color-text-faint); max-width: 26ch; line-height: 1.75; }
+    .footer-col h4 { font-size: var(--text-xs); letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: var(--space-4); }
+    .footer-col a { display: block; font-size: var(--text-sm); color: var(--color-text-faint); margin-bottom: var(--space-3); transition: color var(--transition); }
+    .footer-col a:hover { color: var(--color-primary); }
+    .footer-bottom {
+      margin-top: var(--space-12);
+      padding-top: var(--space-6);
+      border-top: 1px solid var(--color-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+    }
+    .footer-copy { font-size: var(--text-xs); color: var(--color-text-faint); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; } to { opacity: 1; }
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+    .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .d1 { transition-delay: 0.1s; }
+    .d2 { transition-delay: 0.2s; }
+    .d3 { transition-delay: 0.3s; }
+    .d4 { transition-delay: 0.4s; }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <a href="#" class="nav__logo">
+      <img src="images/logo.svg"
+           alt="BUSHI MESHI logo" />
+    </a>
+    <ul class="nav__links" role="list">
+      <li><a href="#sacred">Sacred Izu</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#shrines">Shrines</a></li>
+      <li><a href="#shop">The Space</a></li>
+      <li><a href="#izu-tour">Izu Tour</a></li>
+      <li><a href="#invite">Get Invited</a></li>
+    </ul>
+    <a href="#invite" class="nav__cta">Apply Now</a>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero" aria-label="Hero">
+    <div class="hero__bg" role="img" aria-label="BUSHI MESHI restaurant entrance, Izu Shizuoka"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">神の宿る地、伊豆 · Exclusive Influencer Invitation · Izu, Shizuoka · Japan</p>
+      <div class="hero__logo">
+        <img src="images/logo.svg"
+             alt="BUSHI MESHI" />
+      </div>
+      <h1 class="hero__tagline">The Soul of Japan<br />in Every Shave</h1>
+      <p class="hero__sub">
+        Come taste what Japan has perfected over 400 years — hand-shaved katsuobushi,
+        golden dashi, and a landscape so pure it changes how you see food forever.
+      </p>
+      <div class="hero__actions">
+        <a href="#invite" class="btn-primary">
+          Apply for Invitation
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#menu" class="btn-ghost">Explore the Menu</a>
+      </div>
+    </div>
+    <div class="hero__scroll" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ── SACRED LAND HERO ── -->
+  <section class="sacred-hero" id="sacred" aria-label="The Sacred Land of Izu">
+    <div class="sacred-hero__bg" id="sacredBg"></div>
+    <div class="sacred-hero__overlay"></div>
+    <div class="sacred-hero__content">
+      <p class="sacred-kana reveal">神 の 宿 る 地</p>
+      <div class="sacred-divider reveal"><span>Izu, Shizuoka</span></div>
+      <h2 class="sacred-title reveal">
+        <strong>The Sacred Land</strong>
+        Where Gods<br />Still Dwell
+      </h2>
+      <p class="sacred-sub reveal">
+        Izu is not just a destination. It is one of the oldest sacred territories
+        in Japan — a peninsula where volcanic earth, ancient shrines, and the deep
+        Pacific have coexisted for millennia. The gods never left.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── SACRED PILLARS ── -->
+  <section class="sacred-section section">
+    <div class="container">
+      <div style="text-align:center; max-width:var(--content-narrow); margin-inline:auto; margin-bottom:var(--space-4);">
+        <p class="section-label reveal" style="justify-content:center;">Why Izu is Different</p>
+        <h2 class="section-title reveal" style="text-align:center; margin-bottom:var(--space-4);">Three Forces That Shape This Land</h2>
+        <p class="reveal" style="color:var(--color-text-muted);font-size:var(--text-base);max-width:52ch;margin-inline:auto;text-align:center;line-height:1.8;">
+          Izu's spiritual power comes from the meeting of three ancient forces.
+          No other place in Japan holds all three in such proximity.
+        </p>
+      </div>
+
+      <div class="sacred-pillars">
+        <!-- Fire -->
+        <div class="sacred-pillar reveal">
+          <div class="sacred-pillar__img">
+            <img src="images/sacred_hashiriyu.webp" alt="Hashiriyu hot spring gushing from sea cliff at sunrise, Atami" loading="lazy" />
+          </div>
+          <div class="sacred-pillar__overlay"></div>
+          <div class="sacred-pillar__body">
+            <span class="sacred-pillar__num">I</span>
+            <span class="sacred-pillar__label">Fire of the Earth 火</span>
+            <h3 class="sacred-pillar__title">Volcanic Power</h3>
+            <p class="sacred-pillar__desc">
+              Izu sits on one of the most active volcanic zones on earth.
+              At Hashiriyu — Japan’s rarest horizontal spring — boiling water
+              erupts directly from a sea cliff into the Pacific. The earth breathes
+              here. You can hear it.
+            </p>
+          </div>
+        </div>
+        <!-- Forest -->
+        <div class="sacred-pillar reveal d1">
+          <div class="sacred-pillar__img">
+            <img src="images/kinomiya_shrine.webp" alt="Kinomiya Shrine 2100-year camphor tree lit by lanterns" loading="lazy" style="object-position:center 30%;" />
+          </div>
+          <div class="sacred-pillar__overlay"></div>
+          <div class="sacred-pillar__body">
+            <span class="sacred-pillar__num">II</span>
+            <span class="sacred-pillar__label">Breath of the Forest 木</span>
+            <h3 class="sacred-pillar__title">Ancient Life</h3>
+            <p class="sacred-pillar__desc">
+              A camphor tree that has been alive for 2,100 years stands at
+              Kinomiya Shrine. It was already 600 years old when the shrine
+              was built around it. In Shinto belief, it is not a tree —
+              it is a god (神木, shinboku).
+            </p>
+          </div>
+        </div>
+        <!-- Sea -->
+        <div class="sacred-pillar reveal d2">
+          <div class="sacred-pillar__img">
+            <img src="images/sacred_izu_sea.webp" alt="Sacred shimenawa rope between sea rocks at Izu coast sunrise" loading="lazy" />
+          </div>
+          <div class="sacred-pillar__overlay"></div>
+          <div class="sacred-pillar__body">
+            <span class="sacred-pillar__num">III</span>
+            <span class="sacred-pillar__label">Voice of the Sea 海</span>
+            <h3 class="sacred-pillar__title">The Eternal Ocean</h3>
+            <p class="sacred-pillar__desc">
+              Izu’s coastline is marked by shimenawa — sacred ropes tied between
+              sea rocks to mark the presence of the divine. The fishermen of Ajiro
+              Port have prayed at these same rocks for a thousand years.
+              The sea gives, and the sea is sacred.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- MANIFESTO -->
+      <div class="sacred-manifesto reveal">
+        <p class="sacred-manifesto__jp">
+          神の宿る地で、魚は聖なる糧となり、山は気を吐き、大地は湧く。
+          その山と海の恵みから生まれた魚を、丸藤は一本の節として仕上げる。
+        </p>
+        <p class="sacred-manifesto__en">
+          &ldquo;In a land where gods dwell, fish become sacred, mountains breathe,
+          and the earth runs hot. It is from these mountains and this sea
+          that Marufuji draws one block of katsuobushi at a time.&rdquo;
+        </p>
+      </div>
+
+      <!-- SEA FULLBLEED -->
+      <div class="sacred-sea reveal">
+        <img src="images/sacred_izu_main.webp" alt="Ancient torii gate standing in a sacred mountain river, Izu" loading="lazy" style="object-position: center 30%;" />
+        <div class="sacred-sea__overlay"></div>
+        <div class="sacred-sea__caption">
+          <span class="jp">神の宿る地、伊豆</span>
+          <span class="en">The Sacred Land of Izu &middot; Shizuoka, Japan</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STATS ── -->
+  <div class="stats-strip">
+    <div class="container">
+      <div class="stats-inner">
+        <div class="stat reveal"><span class="num">400+</span><span class="label">Years of Tradition</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat reveal d1"><span class="num">0.015<small style="font-size:.5em">mm</small></span><span class="label">Shaving Precision</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat reveal d2"><span class="num">3</span><span class="label">Izu Experiences</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat reveal d3"><span class="num">1</span><span class="label">Unforgettable Day</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ABOUT BUSHIMESHI ── -->
+  <section class="section" id="about" style="background:var(--color-bg);">
+    <div class="container">
+      <div class="two-col">
+        <div class="reveal">
+          <p class="section-label">What is BUSHI MESHI</p>
+          <h2 class="section-title">Japan's Oldest Soul Food, Perfected Here</h2>
+          <p class="section-body">
+            BUSHI MESHI is the art of eating — a bowl of perfectly steamed rice
+            blanketed with freshly hand-shaved katsuobushi (dried bonito flakes),
+            a pour of golden dashi, and a touch of soy sauce. It sounds simple.
+            That simplicity is the entire point.
+          </p>
+          <p class="section-body">
+            At Marufuji (丸藤), based in Izu, Shizuoka, we have spent generations
+            mastering the precision of the shave. At 0.015mm — thinner than a human hair —
+            the flakes melt on hot rice like whispers of smoke, releasing centuries
+            of umami in a single breath.
+          </p>
+          <a href="#invite" class="btn-ghost" style="margin-top:var(--space-2);display:inline-flex;">
+            Come Experience It
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="reveal d2">
+          <div class="img-frame img-frame--43">
+            <img src="images/kv-zoom.webp"
+                 alt="Close-up of freshly shaved katsuobushi — BUSHI MESHI" loading="lazy" />
+            <div class="img-badge">Hand-Shaved · Marufuji · Izu</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FULL BLEED: KV ABOUT ── -->
+  <div class="fullbleed">
+    <img src="images/kv-about_01.webp"
+         alt="Katsuobushi production at Marufuji, Izu Shizuoka" />
+    <div class="fullbleed__overlay"></div>
+    <p class="fullbleed__caption">丸藤 Marufuji · Izu, Shizuoka · Since Edo Period</p>
+  </div>
+
+  <!-- ── MENU ── -->
+  <section class="menu-section section" id="menu">
+    <div class="container">
+      <div class="menu-header reveal">
+        <p class="section-label" style="justify-content:center;">The Menu</p>
+        <h2 class="section-title" style="text-align:center;margin-bottom:var(--space-4);">Three Ways to Taste Bushi</h2>
+        <p style="color:var(--color-text-muted);font-size:var(--text-base);max-width:50ch;margin-inline:auto;text-align:center;line-height:1.8;">
+          Each dish is built around the same principle — the finest katsuobushi,
+          shaved to order. The difference is in how the umami unfolds.
+        </p>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-card reveal">
+          <div class="menu-card__img">
+            <img src="images/pct_main_01.webp"
+                 alt="Gohan Set — steamed rice with freshly shaved katsuobushi" loading="lazy" />
+          </div>
+          <div class="menu-card__body">
+            <p class="menu-card__tag">Main · ごはんセット</p>
+            <h3 class="menu-card__name">GOHAN Set</h3>
+            <p class="menu-card__desc">Hot steamed rice topped with a generous mound of freshly shaved katsuobushi. Simple, honest, and utterly unforgettable.</p>
+            <p class="menu-card__price">¥880</p>
+          </div>
+        </div>
+        <div class="menu-card reveal d1">
+          <div class="menu-card__img">
+            <img src="images/pct_main_02.webp"
+                 alt="Ochazuke Set — dashi tea poured over katsuobushi rice with wasabi" loading="lazy" />
+          </div>
+          <div class="menu-card__body">
+            <p class="menu-card__tag">Main · お茶漬けセット</p>
+            <h3 class="menu-card__name">OCHAZUKE Set</h3>
+            <p class="menu-card__desc">Golden dashi broth poured tableside over katsuobushi rice with fresh Izu wasabi. Warmth in its purest form.</p>
+            <p class="menu-card__price">¥1,050</p>
+          </div>
+        </div>
+        <div class="menu-card reveal d2">
+          <div class="menu-card__img">
+            <img src="images/pct_main_03.webp"
+                 alt="Onigiri Set — rice balls coated in shaved bonito flakes" loading="lazy" />
+          </div>
+          <div class="menu-card__body">
+            <p class="menu-card__tag">Main · おむすびセット</p>
+            <h3 class="menu-card__name">ONIGIRI Set</h3>
+            <p class="menu-card__desc">Hand-pressed rice balls coated entirely in freshly shaved katsuobushi — every bite a different ratio of rice and flake.</p>
+            <p class="menu-card__price">¥880</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIDES -->
+      <div style="margin-top:var(--space-10);">
+        <p class="section-label reveal" style="justify-content:center; margin-bottom:var(--space-6);">Side Dishes · From Ajiro Port</p>
+        <div class="menu-grid">
+          <div class="menu-card reveal">
+            <div class="menu-card__img">
+              <img src="images/pct_side_01.webp"
+                   alt="Today's sashimi from Ajiro Port" loading="lazy" />
+            </div>
+            <div class="menu-card__body">
+              <p class="menu-card__tag">Side · 本日のお刺身</p>
+              <h3 class="menu-card__name">Today's Sashimi</h3>
+              <p class="menu-card__desc">Fresh catch landed at Ajiro Port that morning, sliced and served simply to let the fish speak.</p>
+              <p class="menu-card__price">¥650</p>
+            </div>
+          </div>
+          <div class="menu-card reveal d1">
+            <div class="menu-card__img">
+              <img src="images/pct_side_02.webp"
+                   alt="Seasonal grilled fish side dish" loading="lazy" />
+            </div>
+            <div class="menu-card__body">
+              <p class="menu-card__tag">Side · 季節の焼き魚</p>
+              <h3 class="menu-card__name">Seasonal Grilled Fish</h3>
+              <p class="menu-card__desc">The catch of the season, grilled over charcoal until the skin is golden and the flesh just yields.</p>
+              <p class="menu-card__price">¥650</p>
+            </div>
+          </div>
+          <div class="menu-card reveal d2">
+            <div class="menu-card__img">
+              <img src="images/pct_side_03.webp"
+                   alt="Salt-cured uzuwa local fish side dish" loading="lazy" />
+            </div>
+            <div class="menu-card__body">
+              <p class="menu-card__tag">Side · 塩うづわ</p>
+              <h3 class="menu-card__name">Salt-Cured Uzuwa</h3>
+              <p class="menu-card__desc">A local Izu fish, salt-cured in the traditional way — a taste you can only find this close to the sea.</p>
+              <p class="menu-card__price">¥650</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FULL BLEED: PRODUCT KV ── -->
+  <div class="fullbleed">
+    <img src="images/kv-product.webp"
+         alt="Katsuobushi product selection at BUSHI MESHI" style="object-position:center 30%;" />
+    <div class="fullbleed__overlay"></div>
+    <p class="fullbleed__caption">Take the Taste of Izu Home</p>
+  </div>
+
+  <!-- ── TAKE-HOME PRODUCTS ── -->
+  <section class="product-section section" id="takeout">
+    <div class="container">
+      <div style="text-align:center; max-width:var(--content-narrow); margin-inline:auto; margin-bottom:var(--space-4);">
+        <p class="section-label reveal" style="justify-content:center;">Take-Home Products</p>
+        <h2 class="section-title reveal" style="text-align:center; margin-bottom:var(--space-4);">Four Shaves, Four Worlds</h2>
+        <p class="reveal" style="color:var(--color-text-muted);font-size:var(--text-base);max-width:50ch;margin-inline:auto;text-align:center;line-height:1.8;">
+          Every variety shaved to a different thickness, releasing a completely different
+          character of umami. Carry Japan home in your bag.
+        </p>
+      </div>
+      <div class="product-grid">
+        <div class="product-card reveal">
+          <div class="product-card__img">
+            <img src="images/pct_takeout_01.webp"
+                 alt="Katsuo ultra-thin 0.015mm katsuobushi shavings packaging" loading="lazy" />
+          </div>
+          <p class="product-card__spec">鰹 KATSUO · 極薄削</p>
+          <h3 class="product-card__name">Ultra-Thin Bonito</h3>
+          <p class="product-card__desc">0.015mm — the finest possible shave. Melts on contact with heat, releasing a delicate, ethereal aroma.</p>
+          <p class="product-card__price">¥950</p>
+        </div>
+        <div class="product-card reveal d1">
+          <div class="product-card__img">
+            <img src="images/pct_takeout_02.webp"
+                 alt="Katsuo thick-cut 0.8mm katsuobushi for rich dashi" loading="lazy" />
+          </div>
+          <p class="product-card__spec">鰹 KATSUO · 厚削</p>
+          <h3 class="product-card__name">Thick-Cut Bonito</h3>
+          <p class="product-card__desc">0.8mm — substantial and bold. Ideal for simmering into a deep, amber dashi stock.</p>
+          <p class="product-card__price">¥950</p>
+        </div>
+        <div class="product-card reveal d2">
+          <div class="product-card__img">
+            <img src="images/pct_takeout_03.webp"
+                 alt="Saba mackerel thin 0.04mm flakes packaging" loading="lazy" />
+          </div>
+          <p class="product-card__spec">鯖 SABA · 薄削</p>
+          <h3 class="product-card__name">Mackerel Flakes</h3>
+          <p class="product-card__desc">0.04mm mackerel shavings — sweeter and richer than bonito, with a lingering umami finish.</p>
+          <p class="product-card__price">¥750</p>
+        </div>
+        <div class="product-card reveal d3">
+          <div class="product-card__img">
+            <img src="images/pct_takeout_04.webp"
+                 alt="Urumeiwashi round herring 0.04mm flakes packaging" loading="lazy" />
+          </div>
+          <p class="product-card__spec">潤目鰯 URUMEIWASHI · 薄削</p>
+          <h3 class="product-card__name">Round Herring</h3>
+          <p class="product-card__desc">0.04mm herring shavings — mild, nuanced, and perfect for gentle broths or topping cold tofu.</p>
+          <p class="product-card__price">¥750</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SHOP PHOTOS ── -->
+  <section class="shop-section section" id="shop">
+    <div class="container">
+      <div class="two-col">
+        <div class="reveal">
+          <p class="section-label">The Space</p>
+          <h2 class="section-title">A Counter at the Edge of Izu</h2>
+          <p class="section-body">
+            BUSHI MESHI isn't a restaurant in the conventional sense.
+            It's a counter, a workshop, and a sensory experience — built around
+            the ancient wooden kezuriki planer and the moment the flakes fall.
+          </p>
+          <p class="section-body">
+            The space is compact, intentional, and deeply photogenic.
+            Natural light, aged wood, the sound of the shave.
+            Your content will look like nothing else on your feed.
+          </p>
+        </div>
+        <div class="reveal d1">
+          <div class="shop-mosaic">
+            <div class="tile tile--large">
+              <img src="images/shop_01.webp"
+                   alt="BUSHI MESHI restaurant interior" loading="lazy" />
+            </div>
+            <div class="tile">
+              <img src="images/shop_02.webp"
+                   alt="BUSHI MESHI dining area" loading="lazy" />
+            </div>
+            <div class="tile">
+              <img src="images/shop_03.webp"
+                   alt="BUSHI MESHI shop detail" loading="lazy" />
+            </div>
+            <div class="tile">
+              <img src="images/shop_04.webp"
+                   alt="BUSHI MESHI product display" loading="lazy" />
+            </div>
+            <div class="tile">
+              <img src="images/shop_05.webp"
+                   alt="BUSHI MESHI interior view" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SHRINE COLLAB ── -->
+  <section class="shrine-section section" id="shrines">
+    <div class="container">
+      <div class="shrine-header reveal">
+        <p class="section-label" style="justify-content:center;">Sacred Collaboration</p>
+        <h2 class="section-title" style="text-align:center; margin-bottom:var(--space-4);">Where Dashi Meets the Divine</h2>
+        <p style="color:var(--color-text-muted);font-size:var(--text-base);max-width:54ch;margin-inline:auto;text-align:center;line-height:1.8;">
+          Atami is one of the most spiritually charged cities in Japan. Two of its ancient shrines
+          &mdash; each with centuries of pilgrims, warlords, and answered prayers &mdash;
+          now share a story with BUSHI MESHI and Marufuji.
+        </p>
+      </div>
+
+      <div class="shrine-grid">
+        <div class="shrine-card reveal">
+          <div class="shrine-card__img">
+            <img src="images/kinomiya_shrine.webp" alt="Kinomiya Shrine great camphor tree lit by lanterns at night" loading="lazy" />
+          </div>
+          <div class="shrine-card__body">
+            <p class="shrine-card__en">Kinomiya Shrine &middot; Atami</p>
+            <h3 class="shrine-card__name">来宮神社</h3>
+            <p class="shrine-card__jp">樹齢2,100年の大楠 &middot; 来福&middot;縁起の神</p>
+            <p class="shrine-card__desc">
+              Home to Japan’s second-largest sacred tree &mdash; a 2,100-year-old camphor
+              whose girth spans 24 meters. Walk once around its trunk and tradition says
+              you gain a year of life. At nightfall, 160 lanterns ignite the forest in
+              amber: the most photographed scene in Atami.
+            </p>
+            <div class="shrine-tag-list">
+              <span class="shrine-tag">Longevity 長寿</span>
+              <span class="shrine-tag">Good Fortune 来福</span>
+              <span class="shrine-tag">Wish Granting</span>
+              <span class="shrine-tag">Night Illumination</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="shrine-card reveal d1">
+          <div class="shrine-card__img">
+            <img src="images/izusan_shrine.webp" alt="Izusan Shrine torii gate on forested mountain steps overlooking Sagami Bay" loading="lazy" />
+          </div>
+          <div class="shrine-card__body">
+            <p class="shrine-card__en">Izusan Shrine &middot; Atami</p>
+            <h3 class="shrine-card__name">伊豆山神社</h3>
+            <p class="shrine-card__jp">源頼朝と北条政子の恋の舞台 &middot; 縁結び・強運</p>
+            <p class="shrine-card__desc">
+              Founded 1,300 years ago at the origin of the name &ldquo;Izu&rdquo; itself.
+              Where Minamoto no Yoritomo and Lady Masako pledged their love &mdash; Japan’s
+              most storied power spot for romance and destiny. Tokugawa Ieyasu climbed
+              these 837 stone steps to pray. The ocean view from the mountaintop is unforgettable.
+            </p>
+            <div class="shrine-tag-list">
+              <span class="shrine-tag">Love &amp; Destiny 縁結び</span>
+              <span class="shrine-tag">Strong Fortune 強運</span>
+              <span class="shrine-tag">837 Stone Steps</span>
+              <span class="shrine-tag">Ocean View</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" style="text-align:center; margin-bottom:var(--space-8);">
+        <p class="section-label" style="justify-content:center;">The Collab Item</p>
+        <h3 class="section-title" style="text-align:center;">A Katsuobushi Blessed by Ancient Gods</h3>
+      </div>
+      <div class="collab-product reveal">
+        <div class="collab-product__img">
+          <img src="images/kito_bushi_product.webp" alt="祈祷枯節 — 深藍婆山和紙と水引で包まれたそうとるぐ封入、神社の祈祷済枯節" loading="lazy" />
+        </div>
+        <div class="collab-product__body">
+          <div class="collab-badge">Monthly Limited &middot; 月限定 1,000個</div>
+          <h3 class="collab-product__title">來福 祈祷枯節<br /><span style="font-size:0.55em;font-style:italic;font-weight:300;color:var(--color-text-muted);">Raifu Kito Karebushi</span></h3>
+          <p class="collab-product__desc">
+            Presented in the form of an <em>ema</em> (絵馬) — the votive tablet offered at shrines
+            to carry one's wishes to the gods. This package holds katsuobushi hand-selected
+            and aged by Marufuji artisans, then ritually blessed (祈祷) at 來宮神社,
+            home of Japan's most ancient camphor tree.<br /><br />
+            The ema design bears the character <strong>來福</strong> ("let fortune come"),
+            with gold-pressed wood-grain and pine motifs referencing the 2,100-year guardian
+            tree. Three colorways: deep green, indigo navy, and burgundy.<br /><br />
+            Write your own wish on the back — then steep a bowl of the most sacred dashi
+            in Japan.
+          </p>
+          <div class="collab-shrines">
+            <span class="collab-shrine-chip">來宮神社 祈祷済</span>
+            <span class="collab-shrine-chip">絵馬型パッケージ</span>
+            <span class="collab-shrine-chip">來福 · 長寿</span>
+            <span class="collab-shrine-chip">3色展開</span>
+            <span class="collab-shrine-chip">丸藤 Marufuji</span>
+          </div>
+          <div style="display:flex;gap:var(--space-4);flex-wrap:wrap;align-items:center;margin-bottom:var(--space-6);">
+            <div style="font-family:var(--font-display);font-size:var(--text-lg);color:var(--color-primary);">ATAMI KINOMIYA × MARUFUJI</div>
+            <div style="font-size:var(--text-xs);color:var(--color-text-faint);letter-spacing:0.1em;">月限定 1,000個 · MONTHLY LIMITED</div>
+          </div>
+          <a href="#invite" class="btn-primary" style="display:inline-flex;">
+            Request as Influencer Gift
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+      <!-- 3-color swatch -->
+      <div class="reveal" style="margin-top:var(--space-8);">
+        <img src="images/kito_karebushi_3color.webp" alt="來福 祈祷枯節 3色展開 — 紺・緑・えんじ, ATAMI KINOMIYA × MARUFUJI" loading="lazy" style="width:100%;border-radius:12px;display:block;" />
+      </div>
+
+      <!-- OMAMORI PRODUCT -->
+      <div class="reveal" style="text-align:center; margin-top:var(--space-20); margin-bottom:var(--space-8);">
+        <p class="section-label" style="justify-content:center;">The Amulet</p>
+        <h3 class="section-title" style="text-align:center;">A Talisman Woven from Sacred Wood &amp; Sea</h3>
+      </div>
+      <div class="collab-product reveal" style="grid-template-columns: 1fr 1fr;">
+        <div class="collab-product__body">
+          <div class="collab-badge">Limited Edition &middot; 限定品</div>
+          <h3 class="collab-product__title">大楠守<br /><span style="font-size:0.55em;font-style:italic;font-weight:300;color:var(--color-text-muted);">Okusu Mamori</span></h3>
+          <p class="collab-product__desc">
+            An omamori (御守) unlike any in existence — born from the union of Japan's most
+            ancient living tree and the artisan dashi of Marufuji. Hand-stitched in deep
+            indigo silk by shrine craftspeople, the front bears a gold-embroidered camphor
+            tree (大楠), the 2,100-year guardian of 來宮神社. Inside, a sliver of
+            aged katsuobushi from Marufuji's cellar is sealed as an offering.<br /><br />
+            Carry it for longevity (長寿), good fortune (来福), and the quiet power
+            of a land where gods still dwell.
+          </p>
+          <div class="collab-shrines">
+            <span class="collab-shrine-chip">來宮神社 監修</span>
+            <span class="collab-shrine-chip">大楠 刺繍</span>
+            <span class="collab-shrine-chip">丸藤 枯節 封入</span>
+            <span class="collab-shrine-chip">長寿 &middot; 来福</span>
+          </div>
+          <div style="display:flex;gap:var(--space-4);flex-wrap:wrap;align-items:center;margin-bottom:var(--space-4);">
+            <div style="font-family:var(--font-display);font-size:var(--text-lg);color:var(--color-primary);">¥ 3,500</div>
+            <div style="font-size:var(--text-xs);color:var(--color-text-faint);letter-spacing:0.1em;">TAX INCLUDED &middot; 限定 100体</div>
+          </div>
+          <a href="#invite" class="btn-primary" style="display:inline-flex;">
+            Request as Influencer Gift
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="collab-product__img">
+          <img src="images/kinomiya_omamori.webp" alt="Kinomiya Shrine omamori amulet with gold camphor tree embroidery on indigo silk, katsuobushi shavings and mizuhiki" loading="lazy" style="object-position:center 20%;" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HASHTAG ── -->
+  <div class="hashtag-strip">
+    <div class="container">
+      <div class="hashtag-list">
+        <span>#BUSHIMESHI</span>
+        <span>#来宮神社</span>
+        <span>#伊豆山神社</span>
+        <span>#KinomiyaShrine</span>
+        <span>#祈祷枯節</span>
+        <span>#大楠守</span>
+        <span>#OkusuMamori</span>
+        <span>#IzuJapan</span>
+        <span>#JapanSpiritualTravel</span>
+        <span>#丸藤</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── IZU TOUR TIMELINE ── -->
+  <section class="tour-section section" id="izu-tour">
+    <div class="container">
+      <div class="tour-header reveal">
+        <p class="section-label" style="justify-content:center;">Suggested Itinerary</p>
+        <h2 class="section-title" style="text-align:center; margin-bottom:var(--space-4);">One Perfect Day in Izu</h2>
+        <p style="color:var(--color-text-muted);font-size:var(--text-base);max-width:50ch;margin-inline:auto;text-align:center;line-height:1.8;">
+          We handle transport, translation, and timing — so you focus entirely
+          on creating. Here's how a typical day unfolds.
+        </p>
+      </div>
+      <div class="tour-timeline">
+        <div class="tour-step reveal">
+          <div class="tour-icon">⛩️</div>
+          <div class="tour-content">
+            <p class="tour-time">07:30 · First Light</p>
+            <h3 class="tour-title">Izusan Shrine — 837 Steps to the Sea</h3>
+            <p class="tour-desc">伊豆山神社 (Izusan Jinja) before the crowds. Climb the ancient stone steps through cedar forest as morning mist rises over Sagami Bay. Where Yoritomo prayed before founding the Kamakura shogunate. Your most powerful opening shot.</p>
+          </div>
+        </div>
+        <div class="tour-step reveal d1">
+          <div class="tour-icon">🌳</div>
+          <div class="tour-content">
+            <p class="tour-time">09:30 · Morning</p>
+            <h3 class="tour-title">Kinomiya Shrine — The 2,100-Year Tree</h3>
+            <p class="tour-desc">Walk the bamboo tunnel to Japan’s second-largest sacred camphor. Circle the 24-meter trunk, whisper your wish, feel something shift. Iconic content in daylight; unforgettable at night with the lanterns.</p>
+          </div>
+        </div>
+        <div class="tour-step reveal d2">
+          <div class="tour-icon">☀️</div>
+          <div class="tour-content">
+            <p class="tour-time">11:00 · Late Morning</p>
+            <h3 class="tour-title">Joren Falls</h3>
+            <p class="tour-desc">Drive into Izu to 浄蓮の滝 (Joren no Taki). Mist over the emerald pool, wasabi growing wild along the stream — pure, unrepeatable light for your nature content.</p>
+          </div>
+        </div>
+        <div class="tour-step reveal d2">
+          <div class="tour-icon">🌊</div>
+          <div class="tour-content">
+            <p class="tour-time">14:30 · Afternoon</p>
+            <h3 class="tour-title">Jogasaki Suspension Bridge — 城ケ崎つりはし</h3>
+            <p class="tour-desc">
+              Walk out onto the 48-meter suspension bridge at 城ヶ崎海岸, swaying above a
+              gorge carved by volcanic eruptions 4,000 years ago. Below, the Pacific hammers
+              black lava cliffs with relentless force. Ahead, the Izu coastline stretches
+              toward the open horizon. The bridge is one of the most-photographed spots
+              in Shizuoka — a single frame that captures the raw, ancient power of this
+              sacred land. Bring a camera. Your audience will feel the drop.
+            </p>
+            <div class="tour-photo">
+              <img src="images/jogasaki_bridge.webp"
+                   alt="城ケ崎つりはし — 溶岩の岩壁上に延びる吊り橋、太平洋を望む"
+                   loading="lazy" />
+              <div class="tour-photo__caption">城ヶ崎海岸 · Jogasaki suspension bridge — 48m over volcanic gorge</div>
+            </div>
+          </div>
+        </div>
+        <div class="tour-step reveal d3">
+          <div class="tour-icon">🍚</div>
+          <div class="tour-content">
+            <p class="tour-time">15:30 · The Main Event</p>
+            <h3 class="tour-title">BUSHI MESHI at Marufuji</h3>
+            <p class="tour-desc">Watch the katsuobushi block shaved to 0.015mm before your eyes. Taste Japan's most honest comfort food — hot rice, fresh flakes, pure dashi — in the space where it has been made for generations. Take home a hand-signed katsuobushi block as a gift.</p>
+          </div>
+        </div>
+        <div class="tour-step reveal d4">
+          <div class="tour-icon">♨️</div>
+          <div class="tour-content">
+            <p class="tour-time">19:00 · Night</p>
+            <h3 class="tour-title">Kinomiya Night Illumination</h3>
+            <p class="tour-desc">Return to 来宮神社 at dusk, when 160 lanterns ignite the ancient forest in amber. The great camphor glows. The most beautiful shot of the day — and we bring you here at the quietest hour.</p>
+          </div>
+        </div>
+        <div class="tour-step reveal">
+          <div class="tour-icon">♨️</div>
+          <div class="tour-content">
+            <p class="tour-time">21:00 · Night</p>
+            <h3 class="tour-title">Onsen &amp; Ryokan</h3>
+            <p class="tour-desc">End in a private open-air onsen overlooking Sagami Bay. Optional overnight at a curated Atami ryokan — extend your content into day two.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── INVITE / FORM ── -->
+  <section class="invite-section section" id="invite">
+    <div class="container">
+      <div class="invite-inner">
+        <div>
+          <p class="section-label reveal">Influencer Invitation</p>
+          <h2 class="section-title reveal" style="margin-bottom:var(--space-4);">We'd Love to Host You in Izu</h2>
+          <p class="section-body reveal">
+            If you share a genuine love of authentic Japanese culture, food,
+            and travel — this day is designed for your audience.
+            We cover the full experience and ask only that you share it honestly.
+          </p>
+          <ul class="perks" role="list">
+            <li class="perk reveal">
+              <div class="perk-dot"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+              <div><strong>Full Day — Complimentary</strong>Transport, food, farm entry, and coastal hike all covered.</div>
+            </li>
+            <li class="perk reveal d1">
+              <div class="perk-dot"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+              <div><strong>Private BUSHI MESHI Tasting</strong>Exclusive tasting of all four katsuobushi varieties with live shaving demo.</div>
+            </li>
+            <li class="perk reveal d2">
+              <div class="perk-dot"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+              <div><strong>Content Support + Gift</strong>English-fluent guide, shooting assistance, and a hand-signed katsuobushi block to take home.</div>
+            </li>
+            <li class="perk reveal d3">
+              <div class="perk-dot"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+              <div><strong>Flexible Scheduling</strong>Day trip or overnight — we work around your Tokyo or Osaka base.</div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="reveal d2">
+          <div class="contact-card">
+            <h3>Apply for Your Invitation</h3>
+            <p class="sub">We respond within 2 business days. All applications welcome.</p>
+            <form class="form" id="inviteForm" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="fname">First Name</label>
+                  <input type="text" id="fname" name="fname" placeholder="Alex" required />
+                </div>
+                <div class="form-group">
+                  <label for="lname">Last Name</label>
+                  <input type="text" id="lname" name="lname" placeholder="Kim" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required />
+              </div>
+              <div class="form-group">
+                <label for="platform">Primary Platform</label>
+                <select id="platform" name="platform">
+                  <option value="">Select platform...</option>
+                  <option>Instagram</option>
+                  <option>TikTok</option>
+                  <option>YouTube</option>
+                  <option>YouTube Shorts</option>
+                  <option>Blog / Website</option>
+                  <option>Multiple</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="handle">Social Handle / Channel URL</label>
+                <input type="text" id="handle" name="handle" placeholder="@yourhandle or youtube.com/c/..." />
+              </div>
+              <div class="form-group">
+                <label for="followers">Approximate Followers</label>
+                <select id="followers" name="followers">
+                  <option value="">Select range...</option>
+                  <option>1,000 – 10,000</option>
+                  <option>10,000 – 50,000</option>
+                  <option>50,000 – 100,000</option>
+                  <option>100,000 – 500,000</option>
+                  <option>500,000+</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">About Your Content (optional)</label>
+                <textarea id="message" name="message" placeholder="What kind of content do you make? Why does Japanese food culture resonate with your audience?"></textarea>
+              </div>
+              <button type="submit" class="form-submit">Send My Application →</button>
+            </form>
+            <p id="formMsg"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT MARUFUJI ── -->
+  <section class="about-section section">
+    <div class="container">
+      <div class="reveal">
+        <img src="images/logo-w.svg"
+             alt="BUSHI MESHI — 丸藤 Marufuji" class="about-logo" />
+      </div>
+      <p class="about-quote reveal">"We don't just sell katsuobushi. We share the moment when someone understands the depth of a single flake."</p>
+      <p class="about-body reveal d1">
+        Marufuji (丸藤) has supplied Japan's finest kaiseki restaurants and home kitchens for generations.
+        Based in the Izu region of Shizuoka — where bonito has been landed, dried, and perfected
+        since the Edo period — we specialize in hand-crafted katsuobushi shaved to the threshold
+        of perception. Every gram tells a story of sea, smoke, and time.
+      </p>
+      <div style="margin-top:var(--space-8);">
+        <a href="https://www.instagram.com/bushimeshi/" target="_blank" rel="noopener" class="btn-ghost reveal d2" style="display:inline-flex; margin-inline:auto;">
+          Follow @bushimeshi on Instagram
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="images/logo-w.svg"
+               alt="BUSHI MESHI" />
+          <p>Izu, Shizuoka · Japan<br />丸藤 Marufuji · An invitation to taste the real.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="#menu">The Menu</a>
+          <a href="#takeout">Take-Home Products</a>
+          <a href="#shop">The Space</a>
+          <a href="#izu-tour">Izu Day Itinerary</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="https://www.instagram.com/bushimeshi/" target="_blank" rel="noopener">Instagram @bushimeshi</a>
+          <a href="https://bushimeshi.com/" target="_blank" rel="noopener">Official Website</a>
+          <a href="#invite">Apply for Invitation</a>
+          <a href="mailto:info@marufuji-bushi.jp">Contact Us</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 丸藤 Marufuji · BUSHI MESHI. Izu, Shizuoka, Japan.</p>
+        <p class="footer-copy">#BUSHIMESHI #IzuJapan #Katsuobushi</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('nav--scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => observer.observe(el));
+
+    // Parallax — hero + sacred
+    const heroBg = document.getElementById('heroBg');
+    const sacredBg = document.getElementById('sacredBg');
+    function handleParallax() {
+      const sy = window.scrollY;
+      if (heroBg) heroBg.style.transform = `translateY(${sy * 0.35}px)`;
+      if (sacredBg) {
+        const rect = sacredBg.closest('section').getBoundingClientRect();
+        const offset = (window.innerHeight - rect.top) * 0.25;
+        sacredBg.style.transform = `translateY(${offset}px)`;
+      }
+    }
+    window.addEventListener('scroll', handleParallax, { passive: true });
+    handleParallax();
+
+    // Form
+    const form = document.getElementById('inviteForm');
+    const msg = document.getElementById('formMsg');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const fname = form.fname.value.trim();
+      const email = form.email.value.trim();
+      if (!fname || !email) {
+        msg.textContent = 'Please fill in your name and email.';
+        msg.style.color = '#c0402a';
+        msg.style.display = 'block';
+        return;
+      }
+      form.style.opacity = '0.4';
+      form.style.pointerEvents = 'none';
+      setTimeout(() => {
+        msg.textContent = `Thank you, ${fname}! Your application has been received. We'll be in touch within 2 business days.`;
+        msg.style.color = 'var(--color-primary)';
+        msg.style.display = 'block';
+        form.style.display = 'none';
+      }, 500);
+    });
+  </script>
+</body>
+</html>
